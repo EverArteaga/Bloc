@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>El bloc de Rossi</title>
+<meta name="theme-color" content="#e0426f">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <section id="login" hidden>
+    <h1>El bloc de Rossi</h1>
+    <p class="hello">Entra para ver tus notas</p>
+    <form id="loginForm">
+      <input type="email" id="email" placeholder="Correo" autocomplete="username" required>
+      <input type="password" id="pass" placeholder="Contraseña" autocomplete="current-password" required>
+      <button class="btn" type="submit">Entrar</button>
+      <p id="loginErr" role="alert"></p>
+    </form>
+  </section>
+  <section id="app" hidden>
+    <h1>El bloc de Rossi</h1>
+    <p class="hello"><span id="hello"></span> <span id="estado" class="estado"></span></p>
+    <section id="daily" aria-label="Mensaje del día">
+      <button class="env" id="env" aria-label="Abrir el mensaje de hoy"><span class="back"></span><span class="front"></span><span class="flap"></span><span class="seal">💌</span></button>
+      <p class="cap" id="cap">Toca el sobre: hoy hay un mensajito para ti</p>
+      <div class="letter" id="letter" hidden>
+        <p class="lbl">Tu mensajito de hoy</p><p class="msg" id="msg"></p><p class="sig">— Ever</p>
+        <div class="acts"><button class="btn ghost" id="keep">Guardar en mi bloc</button></div>
+      </div>
+    </section>
+    <div class="bar">
+      <input type="search" id="q" placeholder="Buscar en mis notas" aria-label="Buscar en mis notas">
+      <button class="btn" id="new">Nueva nota</button>
+    </div>
+    <div id="picker" hidden><p>Elige cómo empezar</p><div class="tpls" id="tpls"></div></div>
+    <div class="grid" id="grid"></div>
+    <p id="empty" hidden>Todavía no hay notas. Elige una plantilla para empezar.</p>
+    <footer><button class="btn ghost" id="install" hidden>Instalar app</button> <button class="link" id="logout" hidden>Cerrar sesión</button></footer>
+  </section>
+</main>
+<script src="vendor/supabase.js"></script>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
